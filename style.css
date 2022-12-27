@@ -1,37 +1,48 @@
-input{
-    border: none;
-    width: 10px;
-    text-align: center;
-}
+body {
+    max-width: max-content;
+    margin: auto;
+    }
+                table{
+                    width: 80%;
+                    height: 80%;
+                    border-collapse: collapse;
+                }
+                tr{
+                    border-left: 5px solid black;
+                    border-right: 5px solid black;
+                }
+                td{
+                    border: 1px solid black;
+                    text-align: center;
+                }
+                .border-top{
+                    border-top: 5px solid black;
+                }
+                .border-right{
+                    border-right: 5px solid black;
+                }
+                .border-bottom{
+                    border-bottom: 5px solid black;
+                }
+    
+                input{
+                    border: none;
+                    width: 100%;
+                    text-align: center;
+                }
+    
+                input :focus{
+                    border: none;
+                }
+                button{
+                    border: none;
+                }
 
-
-table {
-margin:1em auto;
-}
-
-td {
-height:30px;
-width:30px;
-border:1px solid;
-text-align:center;
-}
-
-td:first-child {
-border-left:solid;
-}
-
-td:nth-child(3n) {
-border-right:solid ;
-}
-
-tr:first-child {
-border-top:solid;
-}
-
-tr:nth-child(3n) td {
-border-bottom:solid ;
-}
-
+                /* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+  
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -39,16 +50,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-input:focus{
-    outline: none;
-}
-
-button{
-    width: 45%;
-}
-
+  input:focus{
+      outline: none;
+  }

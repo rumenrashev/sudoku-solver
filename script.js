@@ -56,8 +56,19 @@ function display(){
 
     for(let rowIndex = 0; rowIndex < 9; rowIndex++){
         const tableRow = document.createElement('tr');
+        tableRow.classList.add('border-left');
+        tableRow.classList.add('border-right');
+        if(rowIndex == 8 || rowIndex == 2 || rowIndex == 5){
+            tableRow.classList.add('border-bottom')
+        }
+        if(rowIndex == 0){
+            tableRow.classList.add('border-top');
+        }
         for(let colIndex = 0; colIndex < 9; colIndex++){
             const tableCol = document.createElement('td');
+            if(colIndex == 2 || colIndex == 5){
+                tableCol.classList.add('border-right')
+            }   
             const input = createInput(rowIndex,colIndex);
             tableCol.appendChild(input);
             tableRow.appendChild(tableCol);
@@ -144,5 +155,25 @@ function reset(){
     display();
 }
 
+function resize(){
+    const table = document.querySelector('table');
+    const height = table.getBoundingClientRect().height;
+    const width = table.getBoundingClientRect().width;
+    const min = Math.min(height,width);
+    table.style.height = min;
+    table.style.width = min;
+}
+
+resize();
 
 
+
+
+
+        var resizeTimeout;
+window.addEventListener('resize', function(event) {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function(){
+    window.location.reload();
+  }, 100);
+});
